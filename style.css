@@ -1,104 +1,78 @@
-html {
-  scroll-behavior: smooth;
+html{
+scroll-behavior:smooth;
 }
 
-* {
-  box-sizing: border-box;
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f8;
+color:#222;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
-  color: #222;
-  line-height: 1.6;
+.banner img{
+width:100%;
+display:block;
 }
 
-.banner img {
-  width: 100%;
-  display: block;
+.navbar{
+background:#0c4da2;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.navbar {
-  background: #0c4da2;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.menu{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:12px;
 }
 
-.menu {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  padding: 10px;
+.menu a{
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+padding:8px 12px;
+border-radius:4px;
 }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 10px 12px;
-  border-radius: 4px;
-  transition: background 0.2s ease;
+.menu a:hover{
+background:rgba(255,255,255,0.2);
 }
 
-.menu a:hover {
-  background: rgba(255, 255, 255, 0.15);
+.container{
+width:92%;
+max-width:1100px;
+margin:auto;
+padding:40px 0;
 }
 
-.container {
-  width: 92%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 35px 0;
+section{
+background:white;
+margin-bottom:30px;
+padding:30px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+scroll-margin-top:100px;
 }
 
-section {
-  background: white;
-  margin-bottom: 28px;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  scroll-margin-top: 90px;
+h2{
+color:#0c4da2;
+margin-top:0;
 }
 
-h2 {
-  margin-top: 0;
-  color: #0c4da2;
+h3{
+color:#0c4da2;
 }
 
-h3 {
-  color: #0c4da2;
-  margin-top: 24px;
-}
-
-ul {
-  padding-left: 22px;
-}
-
-footer {
-  background: #0c4da2;
-  color: white;
-  text-align: center;
-  padding: 22px;
-  margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    justify-content: flex-start;
-  }
-
-  .menu a {
-    font-size: 13px;
-  }
-
-  section {
-    padding: 22px;
-  }
+footer{
+background:#0c4da2;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
