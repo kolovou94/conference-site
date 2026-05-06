@@ -38,32 +38,32 @@
     .hero {
       position: relative;
       color: var(--white);
-      padding: 0;
       overflow: hidden;
       text-align: center;
       min-height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
     }
 
     .hero-bg {
       position: absolute;
-      inset: 0;
-      background: url('bridge.jpg') center 40% / cover no-repeat;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('bridge.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
       filter: brightness(0.55) saturate(0.85);
       z-index: 0;
     }
 
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(
         to bottom,
-        rgba(7,19,31,0.15) 0%,
-        rgba(7,19,31,0.40) 40%,
-        rgba(7,19,31,0.80) 75%,
-        rgba(7,19,31,0.97) 100%
+        rgba(7,19,31,0.10) 0%,
+        rgba(7,19,31,0.35) 40%,
+        rgba(7,19,31,0.78) 75%,
+        rgba(7,19,31,0.95) 100%
       );
       z-index: 1;
       pointer-events: none;
@@ -702,7 +702,7 @@
 <!-- ─── HERO ─── -->
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
-  <div style="position:relative; z-index:2; padding: 80px 40px 60px;">
+  <div style="position:relative; z-index:2; padding: 70px 40px 55px; display:flex; flex-direction:column; align-items:center;">
   <div class="hero-content">
     <div class="hero-badge">IWA · Hellenic Open University · 2028</div>
     <h1>
