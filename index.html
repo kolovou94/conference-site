@@ -37,36 +37,46 @@
     /* ─── HERO ─────────────────────────────────────── */
     .hero {
       position: relative;
-      background: linear-gradient(160deg, #0a1f35 0%, #102a43 40%, #1a5276 75%, #1a7d8a 100%);
       color: var(--white);
-      padding: 80px 40px 100px;
+      padding: 0;
       overflow: hidden;
       text-align: center;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('bridge.jpg') center 40% / cover no-repeat;
+      filter: brightness(0.55) saturate(0.85);
+      z-index: 0;
     }
 
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(26,125,138,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(197,151,58,0.15) 0%, transparent 50%);
+      background: linear-gradient(
+        to bottom,
+        rgba(7,19,31,0.15) 0%,
+        rgba(7,19,31,0.40) 40%,
+        rgba(7,19,31,0.80) 75%,
+        rgba(7,19,31,0.97) 100%
+      );
+      z-index: 1;
       pointer-events: none;
     }
 
-    /* Greek meander decoration */
     .hero::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 12px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--gold) 0px, var(--gold) 6px,
-        transparent 6px, transparent 12px,
-        var(--gold) 12px, var(--gold) 18px,
-        transparent 18px, transparent 30px
-      );
-      opacity: 0.6;
+      height: 4px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--gold) 80%, transparent 100%);
+      opacity: 0.9;
+      z-index: 3;
     }
 
     .hero-badge {
@@ -691,16 +701,19 @@
 
 <!-- ─── HERO ─── -->
 <header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div style="position:relative; z-index:2; padding: 80px 40px 60px;">
   <div class="hero-content">
-    <div class="hero-badge">IWA · Hellenic Open University</div>
+    <div class="hero-badge">IWA · Hellenic Open University · 2028</div>
     <h1>
       Water &amp; Environment:<br>
-      <em>Technology · Sustainability · Heritage</em>
+      <em>Technology · Sustainability · Culture · Heritage</em>
     </h1>
     <p class="hero-sub">
-      IWA International Conference · Patras, Greece · 2028
+      IWA International Conference on Water and Environment
     </p>
   </div>
+
   <div class="hero-meta">
     <div class="hero-meta-item">
       <span class="icon">📅</span>
@@ -712,9 +725,21 @@
     </div>
     <div class="hero-meta-item">
       <span class="icon">🏛</span>
-      <div><strong>Organiser</strong>Hellenic Open University</div>
+      <div><strong>Organiser</strong>Hellenic Open University (H.O.U.)</div>
+    </div>
+    <div class="hero-meta-item">
+      <span class="icon">🎓</span>
+      <div><strong>Chair</strong>Prof. I.K. Kalavrouziotis</div>
     </div>
   </div>
+
+  <!-- Quick info strip -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:24px; margin-bottom:8px;">
+    <span style="background:rgba(197,151,58,0.15); border:1px solid rgba(197,151,58,0.4); color:#f0d98f; font-size:12px; padding:5px 14px; border-radius:4px; letter-spacing:1px;">Abstract deadline: 1 Dec 2027</span>
+    <span style="background:rgba(197,151,58,0.15); border:1px solid rgba(197,151,58,0.4); color:#f0d98f; font-size:12px; padding:5px 14px; border-radius:4px; letter-spacing:1px;">Early Bird: 31 Dec 2027</span>
+    <span style="background:rgba(26,125,138,0.2); border:1px solid rgba(26,125,138,0.5); color:#7dd4e0; font-size:12px; padding:5px 14px; border-radius:4px; letter-spacing:1px;">Contact: ikalabro@eap.gr</span>
+  </div>
+</div>
 </header>
 
 <!-- ─── NAV ─── -->
@@ -725,6 +750,8 @@
     <a href="#call">Call for Papers</a>
     <a href="#submission">Submission</a>
     <a href="#venue">Venue</a>
+    <a href="#flyer">Flyer</a>
+    <a href="#registration" style="background:rgba(197,151,58,0.25); color:var(--gold-light);">Registration</a>
     <a href="#scientific">Scientific Committee</a>
     <a href="#organizing">Organizing Committee</a>
     <a href="#accommodation">Accommodation</a>
@@ -938,6 +965,224 @@
     </div>
   </section>
 
+
+  <!-- ─── FLYER ─── -->
+  <section id="flyer">
+    <p class="section-label">Promotional Material</p>
+    <h2 class="section-title">Conference Flyer</h2>
+    <div class="title-rule"></div>
+    <p style="color:var(--text-muted); margin-bottom:28px;">
+      Download and share the official conference flyer. Suitable for printing (A4) and digital distribution.
+    </p>
+
+    <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+
+      <!-- SVG Flyer Preview -->
+      <div style="flex:1; min-width:280px; max-width:480px; background:#102a43; border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(16,42,67,0.25); border:1px solid #1a4060;">
+        <svg width="100%" viewBox="0 0 680 960" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>IWA International Conference on Water and Environment 2028 — Patras, Greece</title>
+<desc>Official conference flyer, 21-23 March 2028, Patras, Greece, organised by Hellenic Open University</desc>
+<rect width="680" height="960" fill="#102a43"/>
+<rect x="0" y="0" width="680" height="230" fill="#07131f"/>
+<g fill="#c8e0ea" opacity="0.8">
+  <circle cx="42" cy="18" r="1"/><circle cx="98" cy="38" r="1.4"/><circle cx="155" cy="12" r="1"/>
+  <circle cx="215" cy="48" r="1"/><circle cx="272" cy="22" r="1.4"/><circle cx="345" cy="9" r="1"/>
+  <circle cx="398" cy="44" r="1"/><circle cx="452" cy="17" r="1.4"/><circle cx="513" cy="31" r="1"/>
+  <circle cx="569" cy="13" r="1"/><circle cx="622" cy="46" r="1.4"/><circle cx="658" cy="21" r="1"/>
+  <circle cx="72" cy="72" r="1"/><circle cx="140" cy="84" r="1.4"/><circle cx="198" cy="96" r="1"/>
+  <circle cx="326" cy="68" r="1"/><circle cx="472" cy="79" r="1.4"/><circle cx="538" cy="90" r="1"/>
+  <circle cx="600" cy="73" r="1"/><circle cx="650" cy="98" r="1.4"/><circle cx="22" cy="108" r="1"/>
+  <circle cx="248" cy="118" r="1.4"/><circle cx="425" cy="106" r="1"/><circle cx="492" cy="119" r="1"/>
+  <circle cx="570" cy="115" r="1.4"/><circle cx="630" cy="124" r="1"/>
+</g>
+<circle cx="84" cy="64" r="30" fill="#172d45"/>
+<circle cx="97" cy="55" r="26" fill="#07131f"/>
+<path d="M0,188 C80,178 160,198 260,185 C340,175 430,198 530,185 C600,175 650,195 680,188 L680,232 L0,232 Z" fill="#0b1e30"/>
+<ellipse cx="300" cy="216" rx="158" ry="38" fill="#0b1e30"/>
+<rect x="195" y="170" width="14" height="52" fill="#112840"/>
+<rect x="391" y="170" width="14" height="52" fill="#112840"/>
+<rect x="195" y="210" width="210" height="14" fill="#112840"/>
+<rect x="226" y="154" width="148" height="62" fill="#122d48"/>
+<rect x="283" y="184" width="34" height="34" fill="#07131f" rx="3"/>
+<ellipse cx="300" cy="184" rx="17" ry="9" fill="#07131f"/>
+<rect x="258" y="108" width="84" height="70" fill="#163550"/>
+<g fill="#163550">
+  <rect x="256" y="97" width="13" height="16"/><rect x="273" y="97" width="13" height="16"/>
+  <rect x="291" y="97" width="13" height="16"/><rect x="309" y="97" width="13" height="16"/>
+  <rect x="327" y="97" width="13" height="16"/>
+</g>
+<rect x="226" y="128" width="34" height="58" fill="#163550"/>
+<rect x="222" y="120" width="38" height="12" fill="#1a3d5e"/>
+<g fill="#163550"><rect x="222" y="109" width="10" height="14"/><rect x="234" y="109" width="10" height="14"/><rect x="246" y="109" width="10" height="14"/></g>
+<rect x="340" y="128" width="34" height="58" fill="#163550"/>
+<rect x="338" y="120" width="38" height="12" fill="#1a3d5e"/>
+<g fill="#163550"><rect x="338" y="109" width="10" height="14"/><rect x="350" y="109" width="10" height="14"/><rect x="362" y="109" width="10" height="14"/></g>
+<rect x="270" y="122" width="9" height="13" fill="#c5973a" rx="1" opacity="0.65"/>
+<rect x="294" y="118" width="9" height="13" fill="#c5973a" rx="1" opacity="0.85"/>
+<rect x="318" y="122" width="9" height="13" fill="#c5973a" rx="1" opacity="0.5"/>
+<rect x="234" y="140" width="7" height="9" fill="#c5973a" rx="1" opacity="0.4"/>
+<rect x="349" y="140" width="7" height="9" fill="#c5973a" rx="1" opacity="0.4"/>
+<path d="M168,228 L178,152 L188,228 Z" fill="#08202f"/>
+<path d="M148,228 L157,168 L166,228 Z" fill="#08202f"/>
+<path d="M412,228 L422,152 L432,228 Z" fill="#08202f"/>
+<path d="M432,228 L441,168 L450,228 Z" fill="#08202f"/>
+<g fill="#112840">
+  <rect x="528" y="168" width="13" height="62"/><rect x="524" y="163" width="21" height="8" rx="1"/><rect x="526" y="226" width="17" height="5" rx="1"/>
+  <rect x="553" y="155" width="13" height="75"/><rect x="549" y="150" width="21" height="8" rx="1"/><rect x="551" y="226" width="17" height="5" rx="1"/>
+  <rect x="522" y="150" width="48" height="6" rx="1"/>
+</g>
+<path d="M76,200 C70,189 66,177 69,166 C72,156 78,153 82,153 C86,153 92,156 95,166 C98,177 94,189 88,200 C93,206 96,214 88,217 L76,217 C68,214 71,206 76,200 Z" fill="#112840"/>
+<path d="M69,174 C62,170 59,179 64,188" fill="none" stroke="#112840" stroke-width="5" stroke-linecap="round"/>
+<path d="M95,174 C102,170 105,179 100,188" fill="none" stroke="#112840" stroke-width="5" stroke-linecap="round"/>
+<rect x="75" y="217" width="14" height="5" fill="#112840" rx="2"/>
+<rect x="0" y="228" width="680" height="60" fill="#0d2035"/>
+<path d="M0,236 C45,229 90,244 135,237 C180,230 225,244 270,237 C315,230 360,244 405,237 C450,230 495,244 540,237 C575,232 620,240 680,236 L680,288 L0,288 Z" fill="#0f2840" opacity="0.7"/>
+<path d="M0,248 C40,241 85,256 130,248 C175,241 220,256 265,248 C310,241 355,256 400,248 C445,241 490,256 535,248 C570,243 618,251 680,248 L680,288 L0,288 Z" fill="#112c44"/>
+<path d="M0,260 C50,254 95,266 140,259 C185,253 230,267 275,260 C320,253 365,267 410,260 C455,253 500,267 545,260 C580,255 625,263 680,260 L680,288 L0,288 Z" fill="#122e46"/>
+<path d="M30,250 C90,246 150,254 210,249" fill="none" stroke="#1a7d8a" stroke-width="1.2" opacity="0.3"/>
+<path d="M290,253 C350,249 410,257 470,252" fill="none" stroke="#1a7d8a" stroke-width="1.2" opacity="0.3"/>
+<path d="M510,250 C565,246 615,254 660,250" fill="none" stroke="#1a7d8a" stroke-width="1.2" opacity="0.3"/>
+<rect x="262" y="262" width="76" height="20" fill="#1a3550" opacity="0.2"/>
+<rect x="0" y="287" width="680" height="24" fill="#071320"/>
+<line x1="0" y1="288" x2="680" y2="288" stroke="#c5973a" stroke-width="2.5"/>
+<line x1="0" y1="310" x2="680" y2="310" stroke="#c5973a" stroke-width="2.5"/>
+<g stroke="#c5973a" stroke-width="1.3" fill="none" opacity="0.65">
+  <path d="M16,294 L16,306 L24,306 L24,298 L32,298 L32,306"/><path d="M52,294 L52,306 L60,306 L60,298 L68,298 L68,306"/>
+  <path d="M88,294 L88,306 L96,306 L96,298 L104,298 L104,306"/><path d="M124,294 L124,306 L132,306 L132,298 L140,298 L140,306"/>
+  <path d="M160,294 L160,306 L168,306 L168,298 L176,298 L176,306"/><path d="M196,294 L196,306 L204,306 L204,298 L212,298 L212,306"/>
+  <path d="M232,294 L232,306 L240,306 L240,298 L248,298 L248,306"/><path d="M268,294 L268,306 L276,306 L276,298 L284,298 L284,306"/>
+  <path d="M304,294 L304,306 L312,306 L312,298 L320,298 L320,306"/><path d="M340,294 L340,306 L348,306 L348,298 L356,298 L356,306"/>
+  <path d="M376,294 L376,306 L384,306 L384,298 L392,298 L392,306"/><path d="M412,294 L412,306 L420,306 L420,298 L428,298 L428,306"/>
+  <path d="M448,294 L448,306 L456,306 L456,298 L464,298 L464,306"/><path d="M484,294 L484,306 L492,306 L492,298 L500,298 L500,306"/>
+  <path d="M520,294 L520,306 L528,306 L528,298 L536,298 L536,306"/><path d="M556,294 L556,306 L564,306 L564,298 L572,298 L572,306"/>
+  <path d="M592,294 L592,306 L600,306 L600,298 L608,298 L608,306"/><path d="M628,294 L628,306 L636,306 L636,298 L644,298 L644,306"/>
+  <path d="M664,294 L664,306 L672,306 L672,298 L680,298"/>
+</g>
+<g stroke="#1a7d8a" fill="none" opacity="0.05" stroke-width="1">
+  <circle cx="340" cy="590" r="90"/><circle cx="340" cy="590" r="140"/>
+  <circle cx="340" cy="590" r="190"/><circle cx="340" cy="590" r="240"/><circle cx="340" cy="590" r="290"/>
+</g>
+<rect x="48" y="322" width="2" height="520" fill="#c5973a" opacity="0.2" rx="1"/>
+<rect x="630" y="322" width="2" height="520" fill="#c5973a" opacity="0.2" rx="1"/>
+<rect x="246" y="330" width="188" height="28" rx="14" fill="none" stroke="#c5973a" stroke-width="1"/>
+<text x="340" y="349" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#c5973a" letter-spacing="3">IWA · H.O.U. · 2028</text>
+<text x="340" y="395" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="13" fill="#a8ccd8" letter-spacing="5">IWA INTERNATIONAL CONFERENCE ON</text>
+<text x="340" y="436" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="34" fill="#ffffff" font-weight="bold" letter-spacing="1">Water &amp; Environment</text>
+<line x1="130" y1="450" x2="550" y2="450" stroke="#c5973a" stroke-width="1" opacity="0.5"/>
+<circle cx="340" cy="450" r="3" fill="#c5973a" opacity="0.6"/>
+<circle cx="130" cy="450" r="2" fill="#c5973a" opacity="0.4"/>
+<circle cx="550" cy="450" r="2" fill="#c5973a" opacity="0.4"/>
+<text x="340" y="474" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="13" fill="#7ab0c0" letter-spacing="2">Technology · Sustainability · Culture · Heritage</text>
+<rect x="110" y="494" width="460" height="58" rx="7" fill="#c5973a"/>
+<text x="340" y="520" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="22" fill="#07131f" font-weight="bold" letter-spacing="1">21 – 23 March 2028</text>
+<text x="340" y="542" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="13" fill="#1a3550" letter-spacing="3">PATRAS, GREECE</text>
+<text x="340" y="580" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#527a8a" letter-spacing="3">ORGANISED BY</text>
+<text x="340" y="598" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#a8ccd8" font-weight="bold">Hellenic Open University (H.O.U.)</text>
+<text x="340" y="614" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#527a8a">Endorsed by IWA Specialist Group on Water in Ancient Civilisations</text>
+<line x1="80" y1="632" x2="600" y2="632" stroke="#1a7d8a" stroke-width="0.6" opacity="0.35"/>
+<text x="340" y="654" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#c5973a" letter-spacing="4">WELCOME TOPICS INCLUDE</text>
+<circle cx="90" cy="672" r="3" fill="#1a7d8a"/><text x="100" y="677" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Sustainable water &amp; wastewater management</text>
+<circle cx="90" cy="695" r="3" fill="#1a7d8a"/><text x="100" y="699" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Circular economy &amp; resource recovery</text>
+<circle cx="90" cy="718" r="3" fill="#1a7d8a"/><text x="100" y="722" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Climate change adaptation &amp; resilience</text>
+<circle cx="90" cy="741" r="3" fill="#1a7d8a"/><text x="100" y="745" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Ancient influences on modern technologies</text>
+<circle cx="358" cy="672" r="3" fill="#1a7d8a"/><text x="368" y="677" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Water heritage, archaeology &amp; culture</text>
+<circle cx="358" cy="695" r="3" fill="#1a7d8a"/><text x="368" y="699" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Digital transformation &amp; smart water</text>
+<circle cx="358" cy="718" r="3" fill="#1a7d8a"/><text x="368" y="722" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Water, health &amp; society</text>
+<circle cx="358" cy="741" r="3" fill="#1a7d8a"/><text x="368" y="745" font-family="Georgia,serif" font-size="12.5" fill="#b8d8e5">Governance, education &amp; community</text>
+<line x1="80" y1="764" x2="600" y2="764" stroke="#1a7d8a" stroke-width="0.6" opacity="0.35"/>
+<text x="340" y="786" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#c5973a" letter-spacing="4">KEY DATES</text>
+<rect x="60" y="798" width="162" height="52" rx="5" fill="#0c2035" stroke="#1a7d8a" stroke-width="0.8"/>
+<text x="141" y="819" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#527a8a" letter-spacing="1">ABSTRACT DEADLINE</text>
+<text x="141" y="838" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#f0d98f" font-weight="bold">1 Dec 2027</text>
+<rect x="239" y="798" width="162" height="52" rx="5" fill="#0c2035" stroke="#1a7d8a" stroke-width="0.8"/>
+<text x="320" y="819" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#527a8a" letter-spacing="1">EARLY BIRD DEADLINE</text>
+<text x="320" y="838" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#f0d98f" font-weight="bold">31 Dec 2027</text>
+<rect x="418" y="798" width="162" height="52" rx="5" fill="#0c2035" stroke="#c5973a" stroke-width="1"/>
+<text x="499" y="819" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#527a8a" letter-spacing="1">CONFERENCE DATES</text>
+<text x="499" y="838" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#c5973a" font-weight="bold">21–23 Mar 2028</text>
+<text x="340" y="874" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#527a8a" letter-spacing="1">Contact: ikalabro@eap.gr</text>
+<rect x="0" y="882" width="680" height="78" fill="#07131f"/>
+<line x1="0" y1="882" x2="680" y2="882" stroke="#c5973a" stroke-width="2"/>
+<rect x="50" y="900" width="64" height="38" rx="4" fill="#122840" stroke="#c5973a" stroke-width="0.8"/>
+<text x="82" y="914" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#c5973a" font-weight="bold" letter-spacing="1">IWA</text>
+<text x="82" y="926" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#527a8a">International</text>
+<text x="82" y="934" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#527a8a">Water Association</text>
+<rect x="124" y="900" width="64" height="38" rx="4" fill="#122840" stroke="#1a7d8a" stroke-width="0.8"/>
+<text x="156" y="914" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#a8ccd8" font-weight="bold" letter-spacing="1">H.O.U.</text>
+<text x="156" y="926" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#527a8a">Hellenic Open</text>
+<text x="156" y="934" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#527a8a">University</text>
+<path d="M610,898 C610,888 622,876 622,876 C622,876 634,888 634,898 C634,907 629,913 622,913 C615,913 610,907 610,898 Z" fill="#1a7d8a" opacity="0.35"/>
+<text x="400" y="916" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#7aabb8" letter-spacing="1">iwa-patras2028.gr</text>
+<text x="400" y="934" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#3d6070">Patras, Greece · 21–23 March 2028</text>
+<text x="340" y="954" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="#2a4050">© IWA International Conference on Water and Environment 2028 · Patras, Greece</text>
+</svg>
+      </div>
+
+      <!-- Info panel -->
+      <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:16px;">
+
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:10px; padding:22px 24px;">
+          <h3 style="font-family:Cinzel,serif; font-size:13px; color:var(--deep-blue); letter-spacing:1px; margin-bottom:14px;">📄 About this Flyer</h3>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:9px; font-size:14px; color:var(--text-muted);">
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--teal);">→</span> Format: SVG / Print-ready</li>
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--teal);">→</span> Size: A4 Portrait</li>
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--teal);">→</span> Languages: English</li>
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--teal);">→</span> Free to share &amp; distribute</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--deep-blue); border-radius:10px; padding:22px 24px; color:white;">
+          <h3 style="font-family:Cinzel,serif; font-size:13px; letter-spacing:1px; color:#f0d98f; margin-bottom:10px;">Share the Conference</h3>
+          <p style="font-size:13px; opacity:0.75; margin-bottom:18px; line-height:1.6;">Help spread the word by sharing this flyer with colleagues, students and institutions.</p>
+          <a href="flyer.html" download="IWA_Patras_2028_Flyer"
+             style="display:inline-block; background:#c5973a; color:#07131f; font-weight:700; text-decoration:none; padding:11px 24px; border-radius:6px; font-size:13px; letter-spacing:0.5px; margin-bottom:10px; width:100%; text-align:center; box-sizing:border-box;">
+            ⬇ Download Flyer
+          </a>
+          <a href="mailto:?subject=IWA Conference Patras 2028&body=Join us at the IWA International Conference on Water and Environment, 21-23 March 2028, Patras, Greece. More info: ikalabro@eap.gr"
+             style="display:inline-block; background:transparent; color:#a8ccd8; font-weight:700; text-decoration:none; padding:11px 24px; border-radius:6px; font-size:13px; letter-spacing:0.5px; width:100%; text-align:center; box-sizing:border-box; border:1px solid #1a4060;">
+            ✉ Share via Email
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REGISTRATION ─── -->
+  <section id="registration">
+    <p class="section-label">Register</p>
+    <h2 class="section-title">Registration</h2>
+    <div class="title-rule"></div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <div style="background:var(--white); border:1px solid var(--border); border-radius:10px; padding:28px;">
+        <h3 style="font-family:Cinzel,serif; font-size:15px; color:var(--deep-blue); margin-bottom:16px;">📅 Key Registration Dates</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:9px 0; color:var(--text-muted);">Early Bird Deadline</td>
+            <td style="padding:9px 0; font-weight:700; color:var(--deep-blue); text-align:right;">31 Dec 2027</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:9px 0; color:var(--text-muted);">Registration Closes</td>
+            <td style="padding:9px 0; font-weight:700; color:var(--deep-blue); text-align:right;">28 Feb 2028</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 0; color:var(--text-muted);">Conference</td>
+            <td style="padding:9px 0; font-weight:700; color:var(--terracotta); text-align:right;">21–23 Mar 2028</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="background:var(--deep-blue); border-radius:10px; padding:28px; color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:16px;">
+        <div style="font-family:Cinzel,serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light);">Online Registration</div>
+        <p style="font-size:14px; opacity:0.8; margin:0;">Registration will open in January 2027. You will be notified by email once the portal is live.</p>
+        <a href="#contact" style="display:inline-block; background:var(--gold); color:var(--deep-blue); font-weight:700; text-decoration:none; padding:11px 28px; border-radius:6px; font-size:13px; letter-spacing:0.5px;">Contact Us for Updates</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ─── SCIENTIFIC COMMITTEE ─── -->
   <section id="scientific">
     <p class="section-label">Programme Committee</p>
@@ -969,134 +1214,6 @@
       </table>
     </div>
 
-    <script>
-    const sciData = [
-      ["Professor Dr. Ioannis Kalavrouziotis","President of Conference, School of Science and Technology, Hellenic Open University, Greece"],
-      ["Associate Professor Petros Kokkinos","Vice President of Conference, School of Science and Technology, Hellenic Open University, Greece"],
-      ["Professor Xrissi K. Karapanagioti","Vice President of Conference, Department of Chemistry, University of Patras, Greece"],
-      ["Professor Dr. Livia Vittori Antisari","Department of Agricultural and Food Sciences, University of Bologna, Italy"],
-      ["Dr. Georgia Aristodemou","School of Humanities, International Hellenic University - IHU, Greece"],
-      ["Assistant Professor Dr. Ariadni Argirakis","Department of Geology, University of Athens, Zografos Campus, Greece"],
-      ["Professor Idil Arslan-Alaton","Civil Engineering Faculty, Environmental Engineering Department, Istanbul Technical University, Turkey"],
-      ["Professor Najet Arua","Faculty of Sciences, Department of Architecture, University of Algiers, Algeria"],
-      ["Professor Dr. Alper Baba","Department of Civil Engineering, Engineering Faculty, İzmir Institute of Technology, Turkey"],
-      ["Professor Florencio C. Ballesteros Jr.","Department of Environmental Engineering, University of the Philippines Diliman, Philippines"],
-      ["Dr. Hina Khan Baloch","Faculty of Life Sciences, Hamburg University of Applied Sciences, Germany"],
-      ["Professor Evangelos Baltas","Department of Water Resources, School of Civil Engineering, NTU Athens, Greece"],
-      ["Prof. Dr. Ing. Jan Bartacek","Department of Water Technology and Environmental Engineering, UCT Prague, Czech Republic"],
-      ["Associate Professor Eduardo Batista","Department of Electrical and Electronics Engineering (EEL), Federal University of Santa Catarina (UFSC), Brazil"],
-      ["Professor Kyriakos Bourikas","School of Science and Technology, Hellenic Open University (HOU), Greece"],
-      ["Professor Belgin Cakmak","Department of Agricultural Structures and Irrigation, Faculty of Agriculture, Ankara University, Turkey"],
-      ["Dr. Constantin Canavas","Department of Chemical Engineering, University of Crete, Greece"],
-      ["Emeritus Professor Joy Carter","Former Rector, University of Winchester, UK"],
-      ["Professor Yinguang Chen","Tongji University, China"],
-      ["Professor Dr. Symeon Christodoulou","Department of Civil & Environmental Engineering, University of Cyprus"],
-      ["Dr. Anastasis Christou","Agricultural Research Officer, Soil Science Section, Agricultural Research Institute, Cyprus"],
-      ["Professor Ioannis Deligiannakis","Department of Physics, University of Ioannina, Greece"],
-      ["Professor Dr. Thomas Dockhorn","Technische University Braunschweig, Germany"],
-      ["Professor Dr. Fawzi El Fagaih","Petroleum Research Centre, Tripoli, Libya"],
-      ["Associate Professor Ahmad El Moll","Faculty of Public Health, Faculty of Sciences, Lebanese University"],
-      ["Professor Dr. Hazim El-Naser","Former Member of the Jordan's House of Representatives (The Parliament), Jordan"],
-      ["Professor Dr. Abuajela Elharbi","Petroleum Research Centre, Tripoli, Libya"],
-      ["Professor Dr. Aliye Suna Erses-Yay","Sakarya University, Turkey"],
-      ["Associate Professor Nikos Fourniotis","Dept. of Civil Engineering, University of the Peloponnese, Greece"],
-      ["Dr. Norma Franklin","University of Haifa, Israel"],
-      ["Professor Dr. Gil Gambash","University of Haifa, Israel"],
-      ["Professor Carlo Gessa","Institute of Agricultural Chemistry, University of Bologna, Italy"],
-      ["Professor Dr. Petros Gikas","Department of Environmental Engineering, Technical University of Crete, Greece"],
-      ["Professor Spyros Golfinopoulos","Department of Financial and Management Engineering, University of the Aegean, Chios, Greece"],
-      ["Professor Tingting Gong","School of Energy and Environment, Southeast University, China"],
-      ["Professor Dr. Emmanouela Gounari","Department of History-Archaeology, University of Ioannina, Greece"],
-      ["Emeritus Professor Peter Grathwohl","Hydrogeochemist, Universität Tübingen, Germany"],
-      ["Professor Dr. Elisabeth Grohmann","School of Life Sciences and Technology, Wedding Advanced Laboratories (WAL), Berlin University, Germany"],
-      ["Professor Dr. Ferdi Hellweger","Technical University of Berlin, Germany"],
-      ["Professor Nguyen Thi Hien","School of Interdisciplinary Studies / Faculty of Cultural Industries & Heritage, Vietnam National University, Hanoi, Vietnam"],
-      ["Professor Dr. Muna Yacoub Hindiyeh","School of Natural Resources Engineering, Civil and Environmental Engineering Dept, German Jordanian University (GJU), Jordan"],
-      ["Professor Dr. Hong-Ying Hu","School of Environment, Tsinghua University, Beijing, China"],
-      ["Professor Dr. Ing. Pavel Jenicek","Department of Water Technology and Environmental Engineering, UCT Prague, Czech Republic"],
-      ["Associate Professor Dr. Paul Jones","School of Environment and Sustainability, University of Glamorgan, UK"],
-      ["Professor Petri Juuti","Development of Water Services and Municipal Infrastructure and Environmental History, University of Tampere, Finland"],
-      ["Professor Dr. Işık Kabdaşlı","Civil Engineering Faculty, Environmental Engineering Department, İstanbul Technical University, Turkey"],
-      ["Associate Professor Dr. Olfa Mahjoub Karray","INRGREF, University of Carthage – UCAR, Tunisia"],
-      ["Professor Dr. Despo Fatta Kassinos","Civil and Environmental Engineering Dept, School of Engineering, University of Cyprus"],
-      ["Professor Dr. Deeksha Katyal","School of Environment Management, Guru Gobind Singh Indraprastha University, New Delhi, India"],
-      ["Emeritus Professor Constantinos Kittas","School of Agricultural Sciences, University of Thessaly, Greece"],
-      ["Professor Gennadii Kochetov","Kyiv National University of Construction and Architecture, Ukraine"],
-      ["Professor Georgy Kodzhaspirov","St. Petersburg State Polytechnical University, Russia"],
-      ["Professor Dr. Dimitrios P. Komilis","Department of Environmental Engineering, Democritus University of Thrace, Greece"],
-      ["Professor Kostas Komnitsas","Department of Mineral Resources Engineering, Technical University of Crete, Greece"],
-      ["Dr. Sasha Koo-Oshima","University of Maryland, USA / Former Deputy Director, FAO"],
-      ["Assistant Professor Dr. Mehmet Ali Kucuker","Environmental Engineering, İzmir Institute of Technology, Turkey"],
-      ["Dr. Pin-Han Kuo","Department of Hydraulic and Ocean Engineering, National Cheng Kung University, Taiwan"],
-      ["Professor Stella Kyvelou","Department of Economic and Regional Development, Panteion University, Greece"],
-      ["Professor George Kyzas","School of Chemistry, Democritus University of Thrace, Greece"],
-      ["Professor Dimitra Lampropoulou","Environmental Chemistry, Aristotle University of Thessaloniki, Greece"],
-      ["Dr. Wang Li","China Institute of Water Resources and Hydropower Research (IWHR), Beijing, China"],
-      ["Professor Xiang Li","Donghua University, China"],
-      ["Professor Giovanni Libralato","University of Naples Federico II, Italy"],
-      ["Associate Professor Dr. Slawo Lomnicki","Department of Environmental Sciences, Louisiana State University, USA"],
-      ["Professor Dr. Jacek Makinia","Gdansk University of Technology, Poland"],
-      ["Professor Dr. Laila Mandi","School of Water and Environmental Sciences, Cadi Ayyad University, Morocco"],
-      ["Dr. Ing. Maria Carmela Monteleone","Civil Hydraulic Engineer, Experienced Researcher in Ancient Roman Water Technologies"],
-      ["Assistant Professor Dr. Carlo Morandi","RPTU Kaiserslautern-Landau, Germany"],
-      ["Associate Professor Dr. Fernando Nardi","Department of Civil Engineering and Computer Science, University of Rome Tor Vergata, Italy"],
-      ["Dr. Nguyen Ngoc","Toyohashi University of Technology, Japan"],
-      ["Emeritus Professor Dr. Gideon Oron","Jacob Blaustein Institutes for Desert Research (BIDR), Israel"],
-      ["Associate Professor Ioannis Papadas","Department of Public & Community Health, University of West Attica, Greece"],
-      ["Professor Dimitris M. Papamichail","Faculty of Agriculture, Aristotle University of Thessaloniki, Greece"],
-      ["Professor Nikos Paranychianakis","Technical University of Crete, Greece"],
-      ["Dr. Francisco Pedrero Salcedo","Senior Researcher, Spanish National Research Council (CEBAS-CSIC), Spain"],
-      ["Professor Dr. Mira Petrovic","Institute of Environmental Assessment and Water Research, Spain"],
-      ["Dr. Manzoor Qadir","United Nations University Institute for Water, Environment and Health (UNU-INWEH)"],
-      ["Professor Habil. Cristiana Radulescu","Valahia University of Targoviste / Politehnica University of Bucharest, Romania"],
-      ["Emeritus Professor Dr. David A. Sabatini","Water Technologies for Emerging Regions (WaTER) Center, University of Oklahoma, USA"],
-      ["Professor Dr. Motasem Saidan","Chemical Engineering Department, University of Jordan, Amman, Jordan"],
-      ["Professor Dr. Nelly Sapojnikova","Javakhishvili Tbilisi State University, Georgia"],
-      ["Professor Dr. Christoph Schüth","Applied Geosciences Institute, Technische Universität Darmstadt, Germany"],
-      ["Professor Dr. Biljana Škrbić","University of Novi Sad, Serbia"],
-      ["Professor Dr. Manzoor H. Soomro","Advisor & Immediate Past President, Economic Cooperation Organization Science, China"],
-      ["Professor Dr.-Ing. Heidrun Steinmetz","Resource Efficient Wastewater Technology, University of Kaiserslautern, Germany"],
-      ["Professor Dr. Volodymyr Stepashko","International Research and Training Center, NAS and MES of Ukraine"],
-      ["Professor K.A. Strevett","School of Civil Engineering and Environmental Science, University of Oklahoma, USA"],
-      ["Professor Dr. Teo Fang Yenn","Department of Water and Environmental Engineering, University of Nottingham Malaysia (UNM)"],
-      ["Professor Ioannis Tokatlidis","School of Health Sciences, Democritus University of Thrace, Greece"],
-      ["Assistant Professor Dr. Athanasia Tolkou","Department of Chemistry, Democritus University of Thrace, Greece"],
-      ["Professor Dr. Barbara Tomaszewska","Faculty of Geology, Geophysics and Environmental Protection, AGH University, Poland"],
-      ["Professor Dr. George Tsakiris","School of Rural and Surveying Engineering, NTUA, Greece"],
-      ["Professor Dr. Vasilios Tsichrintzis","School of Rural and Surveying Engineering, NTUA, Greece"],
-      ["Associate Professor Dr. Gokhan Turker","Istanbul Medeniyet University, Turkey"],
-      ["Professor Dimitris Vagenas","Department of Chemical Engineering, University of Patras, Greece"],
-      ["Professor Soterios Varnavas","Department of Geology, University of Patras, Greece"],
-      ["Professor Dr. Kostas Voudouris","Department of Geology, Aristotle University of Thessaloniki, Greece"],
-      ["Professor Dr. Ing. Jiri Wanner","University of Chemistry and Technology Prague, Czech Republic"],
-      ["Professor Jürgen Wiese","Institute for Water Management and EcoTechnologies, University of Magdeburg, Germany"],
-      ["Professor Hongbin Xu","School of Ecology and Environment, Zhengzhou University, China"],
-      ["Dr. Jian Xu","Chinese Research Academy of Environmental Sciences, Beijing, China"],
-      ["Professor Dr. Jianming Xu","Institute of Soil and Water Resources and Environmental Sciences, Zhejiang University, China"],
-      ["Professor Ierotheos Zacharias","Department of Civil Engineering, University of Patras, Greece"],
-      ["Professor Xiao Yun Zheng","Hubei University, President of China Institute of Yangtze River Studies, China"],
-      ["Professor Guangcan Zhu","School of Energy and Environment, Southeast University, China"]
-    ];
-
-    function renderSci(data) {
-      const tbody = document.getElementById('sci-tbody');
-      const count = document.getElementById('sci-count');
-      tbody.innerHTML = data.map((r, i) =>
-        `<tr style="background:${i%2===0?'#f8fafc':'white'}; border-bottom:1px solid var(--border);">
-          <td style="padding:10px 16px; font-weight:700; color:var(--deep-blue); vertical-align:top;">${r[0]}</td>
-          <td style="padding:10px 16px; color:var(--text-muted); vertical-align:top;">${r[1]}</td>
-        </tr>`
-      ).join('');
-      count.textContent = `Showing ${data.length} of ${sciData.length} members`;
-    }
-
-    function filterSci() {
-      const q = document.getElementById('sci-search').value.toLowerCase();
-      renderSci(q ? sciData.filter(r => r[0].toLowerCase().includes(q) || r[1].toLowerCase().includes(q)) : sciData);
-    }
-
-    renderSci(sciData);
-    </script>
   </section>
 
   <!-- ─── ORGANIZING COMMITTEE ─── -->
@@ -1287,6 +1404,136 @@
     21–23 March 2028 · Patras, Greece · Organised by Hellenic Open University · Endorsed by IWA Specialist Group on Water &amp; Wastewater in Ancient Civilisations
   </p>
 </footer>
+
+
+    <script>
+    const sciData = [
+      ["Professor Dr. Ioannis Kalavrouziotis","President of Conference, School of Science and Technology, Hellenic Open University, Greece"],
+      ["Associate Professor Petros Kokkinos","Vice President of Conference, School of Science and Technology, Hellenic Open University, Greece"],
+      ["Professor Xrissi K. Karapanagioti","Vice President of Conference, Department of Chemistry, University of Patras, Greece"],
+      ["Professor Dr. Livia Vittori Antisari","Department of Agricultural and Food Sciences, University of Bologna, Italy"],
+      ["Dr. Georgia Aristodemou","School of Humanities, International Hellenic University - IHU, Greece"],
+      ["Assistant Professor Dr. Ariadni Argirakis","Department of Geology, University of Athens, Zografos Campus, Greece"],
+      ["Professor Idil Arslan-Alaton","Civil Engineering Faculty, Environmental Engineering Department, Istanbul Technical University, Turkey"],
+      ["Professor Najet Arua","Faculty of Sciences, Department of Architecture, University of Algiers, Algeria"],
+      ["Professor Dr. Alper Baba","Department of Civil Engineering, Engineering Faculty, İzmir Institute of Technology, Turkey"],
+      ["Professor Florencio C. Ballesteros Jr.","Department of Environmental Engineering, University of the Philippines Diliman, Philippines"],
+      ["Dr. Hina Khan Baloch","Faculty of Life Sciences, Hamburg University of Applied Sciences, Germany"],
+      ["Professor Evangelos Baltas","Department of Water Resources, School of Civil Engineering, NTU Athens, Greece"],
+      ["Prof. Dr. Ing. Jan Bartacek","Department of Water Technology and Environmental Engineering, UCT Prague, Czech Republic"],
+      ["Associate Professor Eduardo Batista","Department of Electrical and Electronics Engineering (EEL), Federal University of Santa Catarina (UFSC), Brazil"],
+      ["Professor Kyriakos Bourikas","School of Science and Technology, Hellenic Open University (HOU), Greece"],
+      ["Professor Belgin Cakmak","Department of Agricultural Structures and Irrigation, Faculty of Agriculture, Ankara University, Turkey"],
+      ["Dr. Constantin Canavas","Department of Chemical Engineering, University of Crete, Greece"],
+      ["Emeritus Professor Joy Carter","Former Rector, University of Winchester, UK"],
+      ["Professor Yinguang Chen","Tongji University, China"],
+      ["Professor Dr. Symeon Christodoulou","Department of Civil & Environmental Engineering, University of Cyprus"],
+      ["Dr. Anastasis Christou","Agricultural Research Officer, Soil Science Section, Agricultural Research Institute, Cyprus"],
+      ["Professor Ioannis Deligiannakis","Department of Physics, University of Ioannina, Greece"],
+      ["Professor Dr. Thomas Dockhorn","Technische University Braunschweig, Germany"],
+      ["Professor Dr. Fawzi El Fagaih","Petroleum Research Centre, Tripoli, Libya"],
+      ["Associate Professor Ahmad El Moll","Faculty of Public Health, Faculty of Sciences, Lebanese University"],
+      ["Professor Dr. Hazim El-Naser","Former Member of the Jordan's House of Representatives (The Parliament), Jordan"],
+      ["Professor Dr. Abuajela Elharbi","Petroleum Research Centre, Tripoli, Libya"],
+      ["Professor Dr. Aliye Suna Erses-Yay","Sakarya University, Turkey"],
+      ["Associate Professor Nikos Fourniotis","Dept. of Civil Engineering, University of the Peloponnese, Greece"],
+      ["Dr. Norma Franklin","University of Haifa, Israel"],
+      ["Professor Dr. Gil Gambash","University of Haifa, Israel"],
+      ["Professor Carlo Gessa","Institute of Agricultural Chemistry, University of Bologna, Italy"],
+      ["Professor Dr. Petros Gikas","Department of Environmental Engineering, Technical University of Crete, Greece"],
+      ["Professor Spyros Golfinopoulos","Department of Financial and Management Engineering, University of the Aegean, Chios, Greece"],
+      ["Professor Tingting Gong","School of Energy and Environment, Southeast University, China"],
+      ["Professor Dr. Emmanouela Gounari","Department of History-Archaeology, University of Ioannina, Greece"],
+      ["Emeritus Professor Peter Grathwohl","Hydrogeochemist, Universität Tübingen, Germany"],
+      ["Professor Dr. Elisabeth Grohmann","School of Life Sciences and Technology, Wedding Advanced Laboratories (WAL), Berlin University, Germany"],
+      ["Professor Dr. Ferdi Hellweger","Technical University of Berlin, Germany"],
+      ["Professor Nguyen Thi Hien","School of Interdisciplinary Studies / Faculty of Cultural Industries & Heritage, Vietnam National University, Hanoi, Vietnam"],
+      ["Professor Dr. Muna Yacoub Hindiyeh","School of Natural Resources Engineering, Civil and Environmental Engineering Dept, German Jordanian University (GJU), Jordan"],
+      ["Professor Dr. Hong-Ying Hu","School of Environment, Tsinghua University, Beijing, China"],
+      ["Professor Dr. Ing. Pavel Jenicek","Department of Water Technology and Environmental Engineering, UCT Prague, Czech Republic"],
+      ["Associate Professor Dr. Paul Jones","School of Environment and Sustainability, University of Glamorgan, UK"],
+      ["Professor Petri Juuti","Development of Water Services and Municipal Infrastructure and Environmental History, University of Tampere, Finland"],
+      ["Professor Dr. Işık Kabdaşlı","Civil Engineering Faculty, Environmental Engineering Department, İstanbul Technical University, Turkey"],
+      ["Associate Professor Dr. Olfa Mahjoub Karray","INRGREF, University of Carthage – UCAR, Tunisia"],
+      ["Professor Dr. Despo Fatta Kassinos","Civil and Environmental Engineering Dept, School of Engineering, University of Cyprus"],
+      ["Professor Dr. Deeksha Katyal","School of Environment Management, Guru Gobind Singh Indraprastha University, New Delhi, India"],
+      ["Emeritus Professor Constantinos Kittas","School of Agricultural Sciences, University of Thessaly, Greece"],
+      ["Professor Gennadii Kochetov","Kyiv National University of Construction and Architecture, Ukraine"],
+      ["Professor Georgy Kodzhaspirov","St. Petersburg State Polytechnical University, Russia"],
+      ["Professor Dr. Dimitrios P. Komilis","Department of Environmental Engineering, Democritus University of Thrace, Greece"],
+      ["Professor Kostas Komnitsas","Department of Mineral Resources Engineering, Technical University of Crete, Greece"],
+      ["Dr. Sasha Koo-Oshima","University of Maryland, USA / Former Deputy Director, FAO"],
+      ["Assistant Professor Dr. Mehmet Ali Kucuker","Environmental Engineering, İzmir Institute of Technology, Turkey"],
+      ["Dr. Pin-Han Kuo","Department of Hydraulic and Ocean Engineering, National Cheng Kung University, Taiwan"],
+      ["Professor Stella Kyvelou","Department of Economic and Regional Development, Panteion University, Greece"],
+      ["Professor George Kyzas","School of Chemistry, Democritus University of Thrace, Greece"],
+      ["Professor Dimitra Lampropoulou","Environmental Chemistry, Aristotle University of Thessaloniki, Greece"],
+      ["Dr. Wang Li","China Institute of Water Resources and Hydropower Research (IWHR), Beijing, China"],
+      ["Professor Xiang Li","Donghua University, China"],
+      ["Professor Giovanni Libralato","University of Naples Federico II, Italy"],
+      ["Associate Professor Dr. Slawo Lomnicki","Department of Environmental Sciences, Louisiana State University, USA"],
+      ["Professor Dr. Jacek Makinia","Gdansk University of Technology, Poland"],
+      ["Professor Dr. Laila Mandi","School of Water and Environmental Sciences, Cadi Ayyad University, Morocco"],
+      ["Dr. Ing. Maria Carmela Monteleone","Civil Hydraulic Engineer, Experienced Researcher in Ancient Roman Water Technologies"],
+      ["Assistant Professor Dr. Carlo Morandi","RPTU Kaiserslautern-Landau, Germany"],
+      ["Associate Professor Dr. Fernando Nardi","Department of Civil Engineering and Computer Science, University of Rome Tor Vergata, Italy"],
+      ["Dr. Nguyen Ngoc","Toyohashi University of Technology, Japan"],
+      ["Emeritus Professor Dr. Gideon Oron","Jacob Blaustein Institutes for Desert Research (BIDR), Israel"],
+      ["Associate Professor Ioannis Papadas","Department of Public & Community Health, University of West Attica, Greece"],
+      ["Professor Dimitris M. Papamichail","Faculty of Agriculture, Aristotle University of Thessaloniki, Greece"],
+      ["Professor Nikos Paranychianakis","Technical University of Crete, Greece"],
+      ["Dr. Francisco Pedrero Salcedo","Senior Researcher, Spanish National Research Council (CEBAS-CSIC), Spain"],
+      ["Professor Dr. Mira Petrovic","Institute of Environmental Assessment and Water Research, Spain"],
+      ["Dr. Manzoor Qadir","United Nations University Institute for Water, Environment and Health (UNU-INWEH)"],
+      ["Professor Habil. Cristiana Radulescu","Valahia University of Targoviste / Politehnica University of Bucharest, Romania"],
+      ["Emeritus Professor Dr. David A. Sabatini","Water Technologies for Emerging Regions (WaTER) Center, University of Oklahoma, USA"],
+      ["Professor Dr. Motasem Saidan","Chemical Engineering Department, University of Jordan, Amman, Jordan"],
+      ["Professor Dr. Nelly Sapojnikova","Javakhishvili Tbilisi State University, Georgia"],
+      ["Professor Dr. Christoph Schüth","Applied Geosciences Institute, Technische Universität Darmstadt, Germany"],
+      ["Professor Dr. Biljana Škrbić","University of Novi Sad, Serbia"],
+      ["Professor Dr. Manzoor H. Soomro","Advisor & Immediate Past President, Economic Cooperation Organization Science, China"],
+      ["Professor Dr.-Ing. Heidrun Steinmetz","Resource Efficient Wastewater Technology, University of Kaiserslautern, Germany"],
+      ["Professor Dr. Volodymyr Stepashko","International Research and Training Center, NAS and MES of Ukraine"],
+      ["Professor K.A. Strevett","School of Civil Engineering and Environmental Science, University of Oklahoma, USA"],
+      ["Professor Dr. Teo Fang Yenn","Department of Water and Environmental Engineering, University of Nottingham Malaysia (UNM)"],
+      ["Professor Ioannis Tokatlidis","School of Health Sciences, Democritus University of Thrace, Greece"],
+      ["Assistant Professor Dr. Athanasia Tolkou","Department of Chemistry, Democritus University of Thrace, Greece"],
+      ["Professor Dr. Barbara Tomaszewska","Faculty of Geology, Geophysics and Environmental Protection, AGH University, Poland"],
+      ["Professor Dr. George Tsakiris","School of Rural and Surveying Engineering, NTUA, Greece"],
+      ["Professor Dr. Vasilios Tsichrintzis","School of Rural and Surveying Engineering, NTUA, Greece"],
+      ["Associate Professor Dr. Gokhan Turker","Istanbul Medeniyet University, Turkey"],
+      ["Professor Dimitris Vagenas","Department of Chemical Engineering, University of Patras, Greece"],
+      ["Professor Soterios Varnavas","Department of Geology, University of Patras, Greece"],
+      ["Professor Dr. Kostas Voudouris","Department of Geology, Aristotle University of Thessaloniki, Greece"],
+      ["Professor Dr. Ing. Jiri Wanner","University of Chemistry and Technology Prague, Czech Republic"],
+      ["Professor Jürgen Wiese","Institute for Water Management and EcoTechnologies, University of Magdeburg, Germany"],
+      ["Professor Hongbin Xu","School of Ecology and Environment, Zhengzhou University, China"],
+      ["Dr. Jian Xu","Chinese Research Academy of Environmental Sciences, Beijing, China"],
+      ["Professor Dr. Jianming Xu","Institute of Soil and Water Resources and Environmental Sciences, Zhejiang University, China"],
+      ["Professor Ierotheos Zacharias","Department of Civil Engineering, University of Patras, Greece"],
+      ["Professor Xiao Yun Zheng","Hubei University, President of China Institute of Yangtze River Studies, China"],
+      ["Professor Guangcan Zhu","School of Energy and Environment, Southeast University, China"]
+    ];
+
+    function renderSci(data) {
+      const tbody = document.getElementById('sci-tbody');
+      const count = document.getElementById('sci-count');
+      tbody.innerHTML = data.map((r, i) =>
+        `<tr style="background:${i%2===0?'#f8fafc':'white'}; border-bottom:1px solid var(--border);">
+          <td style="padding:10px 16px; font-weight:700; color:var(--deep-blue); vertical-align:top;">${r[0]}</td>
+          <td style="padding:10px 16px; color:var(--text-muted); vertical-align:top;">${r[1]}</td>
+        </tr>`
+      ).join('');
+      count.textContent = `Showing ${data.length} of ${sciData.length} members`;
+    }
+
+    function filterSci() {
+      const q = document.getElementById('sci-search').value.toLowerCase();
+      renderSci(q ? sciData.filter(r => r[0].toLowerCase().includes(q) || r[1].toLowerCase().includes(q)) : sciData);
+    }
+
+    renderSci(sciData);
+    </script>
 
 </body>
 </html>
